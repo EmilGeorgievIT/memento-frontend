@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+@import './assets/styles/base';
+
+>>>>>>> d06f9ab219eb0f3bdf68b105dc91d8f84bb77f63
 
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
@@ -30,3 +35,89 @@ $memento-theme: mat-light-theme($memento-primary, $memento-accent, $memento-warn
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+<<<<<<< HEAD
+=======
+
+/************************************
+    Basic Styling
+***********************************/
+
+body {
+    & {
+        min-width: 320px;
+        background-color: $light-grey;
+        // overflow: hidden;
+    }
+    .h1,
+    .h2,
+    .h3,
+    .h4,
+    .h5,
+    .h6,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: 0;
+        margin-bottom: .5rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: inherit;
+    }
+    .h1,
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 500;
+    }
+    .h2,
+    h2 {
+        font-size: 2rem;
+    }
+    .h3,
+    h3 {
+        font-size: 1.5rem;
+    }
+    .h4,
+    h4 {
+        font-size: 1.25rem;
+    }
+    .h5,
+    h5 {
+        font-size: 1rem;
+    }
+    .h6,
+    h6 {
+        font-size: .875rem;
+    }
+    p {
+        opacity: 1 !important;
+    }
+    .container {
+        max-width: 1170px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .container-extended {
+        max-width: 95%;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .section-header h2 {
+        font-size: 32px;
+        font-weight: 700;
+        margin: 0 0 16px;
+    }
+    .mat-card {
+        .mat-divider {
+            position: relative;
+        }
+    }
+    a:focus {
+        color: initial;
+    }
+}
+>>>>>>> d06f9ab219eb0f3bdf68b105dc91d8f84bb77f63
