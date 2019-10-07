@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-@import './assets/styles/base';
-
->>>>>>> d06f9ab219eb0f3bdf68b105dc91d8f84bb77f63
 
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
@@ -33,10 +28,49 @@ $memento-theme: mat-light-theme($memento-primary, $memento-accent, $memento-warn
 
 /* You can add global styles to this file, and also import other style files */
 
+
+/********************************
+        Default colors
+*********************************/
+
+$black: #000;
+$white: #fff;
+$dark-navy: #2a3a4a;
+$light-navy: #485d72;
+$blue: #3dbbf3;
+$dark-blue: #2a3a4a;
+$dark-grey: #505050;
+$grey: #808080;
+$light-grey: #1c9d92;
+$warning: #d50000;
+$orange: #ea723d;
+$lime-green: #39FF14;
+$green: #228B22;
+$purple: #8A2BE2;
+$transparent: transparentize($dark-navy, 0.1);
+
+/********************************
+        Default Text Colors
+*********************************/
+
+.black-color { color: $black; }
+.white-color { color: $white; }
+.dark-navy-color { color: $dark-navy; }
+.light-navy-color { color: $light-navy; }
+.blue-color { color: $blue; }
+.dark-grey-color { color: $dark-grey; }
+.grey-color { color: $grey; }
+.light-grey-color { color: $light-grey; }
+.red-color { color: $warning; }
+.orange-color { color: $orange; }
+.lime-color { color: $lime-green; }
+.green-color { color: $green; }
+.purple-color { color: $purple; }
+
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-<<<<<<< HEAD
-=======
+body { margin: 0; font-family: 'Rubik', sans-serif; }
+
 
 /************************************
     Basic Styling
@@ -45,7 +79,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 body {
     & {
         min-width: 320px;
-        background-color: $light-grey;
+        background-color: $white;
+        color: $grey;
+        font-size: 14px;
         // overflow: hidden;
     }
     .h1,
@@ -116,8 +152,85 @@ body {
             position: relative;
         }
     }
+    a {
+        color: #fff;
+        text-decoration: none;
+        transition: .2s all linear;
+    }
     a:focus {
         color: initial;
     }
 }
->>>>>>> d06f9ab219eb0f3bdf68b105dc91d8f84bb77f63
+
+/**************************************
+        Default Background colors
+***************************************/
+
+.bg-transparent {
+    background-color: $transparent;
+    color: $white;
+}
+
+.bg-blue {
+        background-color: $blue;
+        color: $white;
+}
+
+.bg-black {
+        background-color: $black;
+        color: $white;  
+}
+
+.bg-white {
+        background-color: $white;
+        color: $black;
+}
+.bg-dark-navy {
+        background-color: $dark-navy;
+        color: $white;
+}
+.bg-light-navy {
+        background-color: $light-navy;
+        color: $white;
+}
+.bg-dark-grey {
+        background-color: $dark-grey;
+        color: $white;
+}
+
+.bg-light-navy {
+        background-color: $light-navy;
+        color: $white;
+}
+
+.bg-gray {
+        background-color: $grey;
+        color: $black;
+}
+.bg-light-gray {
+        background-color: $light-grey;
+        color: $black;
+}
+.color-light-gray {
+        color: $light-grey;
+}
+
+/************************************
+         Media Queries
+***********************************/
+
+$mobile-xs: '390px';
+$mobile: '599px'; 
+$tablet: '959px';
+$tablet-portrait: '1024px';
+$smallDesktop: '1279px';
+
+
+
+/************************************
+        Container
+***********************************/
+.container {
+        max-width: 1440px;
+        padding: 0 15px;
+}
