@@ -36,7 +36,7 @@ $memento-theme: mat-light-theme($memento-primary, $memento-accent, $memento-warn
 $black: #000;
 $white: #fff;
 $dark-navy: #2a3a4a;
-$light-navy: #485d72;
+$light-navy: #1ea69a;
 $blue: #3dbbf3;
 $dark-blue: #2a3a4a;
 $dark-grey: #505050;
@@ -215,6 +215,15 @@ body {
         color: $light-grey;
 }
 
+
+/************************************
+    Material Buttons
+***********************************/
+
+.mat-button { 
+    border-radius: 0 !important;
+}
+
 /************************************
          Media Queries
 ***********************************/
@@ -233,4 +242,32 @@ $smallDesktop: '1279px';
 .container {
         max-width: 1440px;
         padding: 0 15px;
+}
+
+
+/**************************************
+    Dropdown
+***************************************/
+
+.dropdown { 
+    & {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 260px;
+        padding-top: 15px;
+    }
+    .dropdown__corner{ 
+        position: relative;
+        display: block;
+        width: 10px;
+        height: 10px;
+        margin-left: auto;
+        border-top: 10px solid transparent;
+        border-right: 20px solid #f7f7f7;
+    }
+    .dropdown__container{ 
+        box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.05);
+        background-color: #F7F7F7;
+    }
 }
