@@ -1,1 +1,12 @@
 <app-header></app-header>
+
+<ngx-slick-carousel class="carousel" 
+                        #slickModal="slick-carousel" 
+                        [config]="slideConfig" 
+                        (breakpoint)="breakpoint($event)"
+                        >
+
+    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+          <img src="{{ slide.img }}" alt="" width="100%">
+    </div>
+</ngx-slick-carousel>

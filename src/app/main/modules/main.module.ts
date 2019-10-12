@@ -4,7 +4,7 @@ import { MainComponent } from '../components/main/main.component';
 import { RouterModule } from '@angular/router';
 import { HomeRoutes } from '../routing/main.routing';
 import { SharedModule } from 'src/app/shared/modules/shared.module';
-
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 
 @NgModule({
@@ -12,7 +12,8 @@ import { SharedModule } from 'src/app/shared/modules/shared.module';
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule.forChild(HomeRoutes),
+    SlickCarouselModule,
+    RouterModule.forChild(HomeRoutes)
   ]
 })
 export class MainModule { }

@@ -17,6 +17,7 @@ import { MaterialModule } from './shared/modules/material.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     SharedModule,
     MaterialModule,
     AppRoutingModule,
@@ -25,8 +26,7 @@ import { MaterialModule } from './shared/modules/material.module';
     FormsModule,
     HttpClientModule,
     RouterModule.forChild(rootRouterConfig),
-    MainModule,
-    BrowserAnimationsModule
+    MainModule
   ],
   providers: [],
   bootstrap: [AppComponent]

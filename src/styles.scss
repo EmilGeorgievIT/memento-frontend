@@ -256,6 +256,7 @@ $smallDesktop: '1279px';
         top: 100%;
         right: calc(100% - 31px);
         width: 260px;
+        display: none;
     }
     .dropdown__corner{ 
         position: relative;
