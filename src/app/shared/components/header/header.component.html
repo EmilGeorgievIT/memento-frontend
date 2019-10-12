@@ -107,6 +107,10 @@
                                                     Please provide minimum 8 symbols !
                                                 </mat-error>
                                             </mat-form-field>
+
+                                            <div style="transform:scale(0.76);transform-origin:0 0;max-width: 200px;">
+                                                <re-captcha class="form__recaptcha" formControlName="recaptchaReactive"></re-captcha>
+                                            </div>
                                             
                                             <div class="form__actions">
                                                 <button [disabled]='loginForm.invalid' class="bg-light-navy btn" type="submit" mat-button>

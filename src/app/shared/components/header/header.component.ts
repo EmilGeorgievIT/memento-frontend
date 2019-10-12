@@ -21,7 +21,8 @@ export class HeaderComponent implements OnInit {
       password: ['', Validators.compose([
         Validators.required,
         Validators.minLength(8)
-      ])]
+      ])],
+      recaptchaReactive: [null, Validators.required]
     }); 
    }
 

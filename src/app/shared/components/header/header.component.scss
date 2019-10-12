@@ -118,6 +118,9 @@
     text-align: center;
     margin: 1rem 0;
   }
+  iframe {
+    transform: scale(0.85) !important;
+  }
   .form__register-link {
     & {
       display: inline-block;

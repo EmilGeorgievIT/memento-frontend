@@ -10,6 +10,7 @@ import { MainModule } from './main/modules/main.module';
 import { RouterModule } from '@angular/router';
 import { rootRouterConfig } from './app.routes';
 import { MaterialModule } from './shared/modules/material.module';
+import { RecaptchaModule, RecaptchaFormsModule, RECAPTCHA_SETTINGS } from 'ng-recaptcha';
 
 @NgModule({
   declarations: [
@@ -22,13 +23,22 @@ import { MaterialModule } from './shared/modules/material.module';
     MaterialModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    RecaptchaModule,
+    RecaptchaFormsModule,
     HttpClientModule,
     FormsModule,
     HttpClientModule,
     RouterModule.forChild(rootRouterConfig),
     MainModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: RECAPTCHA_SETTINGS,
+      useValue: {
+          siteKey: '6LfpR70UAAAAAN5COKrjW6xeDSJDysDMUzx4HP9n'
+    }
+  }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
