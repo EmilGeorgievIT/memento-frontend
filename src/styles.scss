@@ -254,9 +254,13 @@ $smallDesktop: '1279px';
 .dropdown { 
     & {
         position: absolute;
-        top: 100%;
+        top: calc(100% + 30px);
+        opacity: 0;
+        visibility: hidden;
         right: calc(100% - 31px);
+        transition: all .3s ease-in-out;
     }
+   
     .dropdown__login {
         h4 {
             margin-bottom: 1rem;

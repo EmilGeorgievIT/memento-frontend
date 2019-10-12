@@ -75,6 +75,11 @@
     > .material-icons {
       font-size: 31px;
     }
+    &:hover .dropdown{
+      top: 100%;
+      visibility: visible;
+      opacity: 1;
+    }
   }
   ul{
     display: flex;
@@ -106,9 +111,7 @@
 ***************************************/
 
 .form-login{ 
-  .form__actions{ 
-    margin-top: 1rem;
-    
+  .form__actions{     
     .btn {
       display: block;
       width: 100%;
