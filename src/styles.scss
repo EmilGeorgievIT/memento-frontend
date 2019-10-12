@@ -39,7 +39,7 @@ $dark-navy: #2a3a4a;
 $light-navy: #1ea69a;
 $blue: #3dbbf3;
 $dark-blue: #2a3a4a;
-$dark-grey: #505050;
+$dark-grey: #1a1a1a;
 $grey: #808080;
 $light-grey: #1c9d92;
 $warning: #d50000;
@@ -114,11 +114,12 @@ body {
     }
     .h3,
     h3 {
-        font-size: 1.5rem;
+        font-size: 1.35rem;
     }
     .h4,
     h4 {
         font-size: 1.25rem;
+        font-weight: 500;
     }
     .h5,
     h5 {
@@ -255,8 +256,11 @@ $smallDesktop: '1279px';
         position: absolute;
         top: 100%;
         right: calc(100% - 31px);
-        width: 260px;
-        display: none;
+    }
+    .dropdown__login {
+        h4 {
+            margin-bottom: 1rem;
+        }
     }
     .dropdown__corner{ 
         position: relative;
@@ -268,8 +272,43 @@ $smallDesktop: '1279px';
         border-right: 20px solid #f7f7f7;
     }
     .dropdown__container{ 
-        height: 100px;
+        margin-top: -10px;
+        padding: 2rem;
+        color: $dark-grey;
         box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.05);
         background-color: #F7F7F7;
     }
+}
+
+/**************************************
+    Slider Slick
+***************************************/
+.slick-dots {
+    & {
+        bottom: 10px !important; 
+    }
+    li button:before{ 
+        font-size: 12px !important;
+        color: $white !important;
+    }
+}
+
+/**************************************
+    Material Styling
+***************************************/
+
+.mat-button.mat-primary[disabled],
+.mat-button.mat-accent[disabled],
+.mat-button.mat-warn[disabled],
+.mat-button[disabled][disabled],
+.mat-icon-button.mat-primary[disabled],
+.mat-icon-button.mat-accent[disabled],
+.mat-icon-button.mat-warn[disabled],
+.mat-icon-button[disabled][disabled],
+.mat-stroked-button.mat-primary[disabled],
+.mat-stroked-button.mat-accent[disabled],
+.mat-stroked-button.mat-warn[disabled],
+.mat-stroked-button[disabled][disabled] {
+    color: $white !important;
+    opacity: .7;
 }

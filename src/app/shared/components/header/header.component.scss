@@ -72,7 +72,7 @@
       display: inline-block;
       cursor: pointer;
     }
-    .material-icons {
+    > .material-icons {
       font-size: 31px;
     }
   }
@@ -98,4 +98,38 @@
 
 .logo {
   display: inline-block;
+}
+
+
+/**************************************
+    Login Form
+***************************************/
+
+.form-login{ 
+  .form__actions{ 
+    margin-top: 1rem;
+    
+    .btn {
+      display: block;
+      width: 100%;
+    }
+  }
+  .form__register {
+    text-align: center;
+    margin: 1rem 0;
+  }
+  .form__register-link {
+    & {
+      display: inline-block;
+      color: #444;
+      font-weight: 500;
+    }
+    &:hover {
+      color: #ea723d;
+    }
+  }
+
+  .form__control ~ .form__control {
+    margin-top: .2rem;
+  }
 }

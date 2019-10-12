@@ -21,7 +21,15 @@ export class MainComponent implements OnInit {
     }
   ];
 
-  slideConfig = {"slidesToShow": 1, "slidesToScroll": 1};
+  slideConfig = { 
+    "slidesToShow": 1,
+    "slidesToScroll": 1,
+    "autoplay": true,
+    "arrows": false,
+    "fade": true,
+    "cssEase": 'linear',
+    "dots": true
+  };
 
   constructor() { 
   }

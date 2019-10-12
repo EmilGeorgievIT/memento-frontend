@@ -4,6 +4,7 @@ import { HeaderComponent } from '../components/header/header.component';
 import { MaterialModule } from './material.module';
 import { NotFoundComponent } from '../components/not-found/not-found.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -14,11 +15,14 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     MaterialModule
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    NotFoundComponent
   ]
 })
 export class SharedModule { }

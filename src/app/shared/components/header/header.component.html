@@ -69,7 +69,58 @@
                                 <div class="dropdown__corner"></div>
                                 
                                 <div class="dropdown__container">
+                                    <div class="dropdown__login">
+                                        <h4 class="mb-1">
+                                            Login
+                                        </h4>
 
+                                        <form [formGroup]="loginForm" (ngSubmit)="submitLogin()" class="form-login">
+                                            <mat-form-field class="form-control" appearance="outline">
+                                                <mat-label>Email</mat-label>
+                                                
+                                                <input matInput formControlName='email' placeholder="email">
+                                                
+                                                <mat-icon matSuffix>email</mat-icon>
+                                                
+                                                <mat-error *ngIf="loginForm.get('email').hasError('required')">
+                                                    This field is required !
+                                                </mat-error>
+
+                                                <mat-error *ngIf="loginForm.get('email').hasError('email')">
+                                                    Invalid email !
+                                                </mat-error>
+                                            </mat-form-field>
+
+                                            <mat-form-field class="form-control" appearance="outline">
+                                                <mat-label>Password</mat-label>
+
+                                                <input formControlName='password' matInput [type]="hide ? 'password' : 'text'" placeholder="password">
+                                                 
+                                                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}
+                                                </mat-icon>
+                                               
+                                                <mat-error *ngIf="loginForm.get('password').hasError('required')">
+                                                    This field is required !
+                                                </mat-error>
+
+                                                <mat-error *ngIf="loginForm.get('password').hasError('minlength')">
+                                                    Please provide minimum 8 symbols !
+                                                </mat-error>
+                                            </mat-form-field>
+                                            
+                                            <div class="form__actions">
+                                                <button [disabled]='loginForm.invalid' class="bg-light-navy btn" type="submit" mat-button>
+                                                    Login
+                                                </button>
+                                            </div>
+
+                                            <div class="form__register">
+                                                <a routerLink='/register' class="form__register-link">
+                                                    New User? Register Now
+                                                </a>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </a>
