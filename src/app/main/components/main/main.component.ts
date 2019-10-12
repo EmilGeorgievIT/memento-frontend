@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
   slides = [
-    { img: "assets/images/slide-one.jpg" },
-    { img: "assets/images/slide-two.jpg" },
-    { img: "assets/images/slide-three.jpg" }
+    { 
+      img: "assets/images/slide-one.jpg",
+      link: 'estate/1'
+    },
+    { 
+      img: "assets/images/slide-two.jpg",
+      link: 'estate/2' 
+    },
+    { 
+      img: "assets/images/slide-three.jpg",
+      link: 'estate/2' 
+    }
   ];
 
   slideConfig = {"slidesToShow": 1, "slidesToScroll": 1};

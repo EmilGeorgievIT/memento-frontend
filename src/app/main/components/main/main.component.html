@@ -7,6 +7,8 @@
                         >
 
     <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-          <img src="{{ slide.img }}" alt="" width="100%">
+          <a [routerLink]='slide.link'>
+            <img src="{{ slide.img }}" alt="" width="100%">
+          </a>
     </div>
 </ngx-slick-carousel>
