@@ -79,7 +79,7 @@ body { margin: 0; font-family: 'Rubik', sans-serif; }
 body {
     & {
         min-width: 320px;
-        overflow: hidden;
+        overflow-x: hidden;
         background-color: $white;
         color: $grey;
         font-size: 14px;
@@ -295,6 +295,13 @@ $smallDesktop: '1279px';
         font-size: 12px !important;
         color: $white !important;
     }
+}
+
+/**************************************
+    Main
+***************************************/
+.main--margin-top {
+    margin-top: 130px;
 }
 
 /**************************************

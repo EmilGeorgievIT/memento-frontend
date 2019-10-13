@@ -1,0 +1,36 @@
+
+/**************************************
+    Section Register
+***************************************/
+.section-register{
+  & {
+    padding: 2rem 0;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .section__head {
+    margin-bottom: 2rem;
+  }
+}
+
+/**************************************
+    Form Register
+***************************************/
+
+:host .form-register {   
+  .form__control{
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .form__select {
+    padding: 1rem 0;
+    border: 2px solid rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    ::ng-deep .mat-select-trigger {
+      padding: 0 1rem;
+    }
+  }
+  .form__actions {
+    margin-top: 2rem;
+  }
+}
