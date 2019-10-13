@@ -41,7 +41,7 @@ $blue: #3dbbf3;
 $dark-blue: #2a3a4a;
 $dark-grey: #1a1a1a;
 $grey: #808080;
-$light-grey: #1c9d92;
+$light-grey: #f7f7f7;
 $warning: #d50000;
 $orange: #ea723d;
 $lime-green: #39FF14;
@@ -80,7 +80,7 @@ body {
     & {
         min-width: 320px;
         overflow-x: hidden;
-        background-color: $white;
+        background-color: $light-grey;
         color: $grey;
         font-size: 14px;
         // overflow: hidden;

@@ -1,11 +1,21 @@
 
+
+/**************************************
+    Main
+***************************************/
+.main {
+  margin-top: 160px;
+}
+
 /**************************************
     Section Register
 ***************************************/
+
 .section-register{
   & {
-    padding: 2rem 0;
-    max-width: 400px;
+    max-width: 500px;
+    padding: 2rem;
+    background-color: #fff;
     margin: 0 auto;
   }
   .section__head {

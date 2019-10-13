@@ -50,6 +50,8 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
+    debugger;
+
     if(this.registerForm.invalid) {
       return;
     } else {
