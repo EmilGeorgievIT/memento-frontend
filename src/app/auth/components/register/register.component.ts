@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MyErrorStateMatcher } from 'src/app/shared/helpers/match-error-state';
+import { RegisterService } from './register.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -22,7 +24,9 @@ export class RegisterComponent implements OnInit {
   ];
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router,
+    private registerService: RegisterService
   ) {
     this.registerForm = this.fb.group({
       username: ['', Validators.compose([
@@ -47,15 +51,17 @@ export class RegisterComponent implements OnInit {
     const pass = group.controls.password.value;
     const confirmPass = group.controls.confirmPassword.value;
     return pass === confirmPass ? null : {notSame: true};
-  }
+  } 
 
   onSubmit() {
-    debugger;
-
     if(this.registerForm.invalid) {
       return;
     } else {
-      console.log(this.registerForm.value);  
+      this.registerService.createUser(this.registerForm.value).subscribe(data => {
+        this.router.navigateByUrl('/home');
+      }, error => {
+        console.log(error);
+      })
     }
   }
 
