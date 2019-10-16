@@ -1,3 +1,4 @@
+@import '_base';
 
 /**************************************
   Header
@@ -94,6 +95,14 @@
   a {
     display: flex;
     align-items: center;
+  }
+}
+
+@media(max-width: $smallDesktop) {
+  .nav-utils {
+    .contact-link {
+      display: none;
+    }
   }
 }
 
