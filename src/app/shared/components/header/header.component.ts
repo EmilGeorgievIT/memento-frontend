@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class HeaderComponent implements OnInit {
   loginForm: FormGroup;
   hide = true;
+  isMobileMenuActive = false;
 
   constructor(
     private fb: FormBuilder
@@ -25,7 +26,11 @@ export class HeaderComponent implements OnInit {
       recaptchaReactive: [null, Validators.required]
     }); 
    }
-
+   
+  triggerMenu() {
+    this.isMobileMenuActive = !this.isMobileMenuActive;
+  }
+  
   ngOnInit() {
   }
 
