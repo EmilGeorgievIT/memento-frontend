@@ -7,11 +7,14 @@ import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
 import { MainModule } from 'src/app/main/modules/main.module';
 import { SharedModule } from 'src/app/shared/modules/shared.module';
 import { RouterModule } from '@angular/router';
-
+import { LoginComponent } from '../components/login/login.component';
 
 
 @NgModule({
-  declarations: [RegisterComponent],
+  declarations: [
+    RegisterComponent,
+    LoginComponent
+  ],
   imports: [
     CommonModule,
     MaterialModule,

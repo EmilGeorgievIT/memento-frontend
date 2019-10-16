@@ -1,0 +1,58 @@
+<app-header></app-header>
+
+<main class="main main--margin-top">
+  <section class="section-login">
+    <div class="container">
+      <div class="section__head">
+        <h4 class="section__title">
+          Login 
+        </h4>
+      </div>
+      
+      <div class="section__body">
+        <form class="form-login" [formGroup]='loginForm' (ngSubmit)='onSubmit()'>
+          <div class="form__body">
+            <mat-form-field appearance='outline' class="form__control">
+              <input matInput name="email" formControlName='email' placeholder="E-mail">
+              
+              <mat-icon matSuffix>email</mat-icon>
+              
+              <mat-error *ngIf="loginForm.get('email').hasError('email')">
+                Invalid email address
+              </mat-error>
+  
+              <mat-error *ngIf="loginForm.get('email').hasError('required')">
+                This field is required !
+              </mat-error>
+            </mat-form-field>
+            
+            <mat-form-field appearance='outline' class="form__control">
+              <input matInput formControlName='password' [type]="hide ? 'password' : 'text'" placeholder="Password">
+              
+              <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}
+              </mat-icon>
+  
+              <mat-error *ngIf="loginForm.get('password').hasError('required')">
+                This field is required !
+              </mat-error>
+  
+              <mat-error *ngIf="loginForm.get('password').hasError('minlength')">
+                Password must be at least 8 characters !
+              </mat-error>
+            </mat-form-field>
+  
+            <div style="max-width: 300px; margin: 2rem auto 0;">
+                <re-captcha class="form__recaptcha" formControlName="recaptchaReactive"></re-captcha>
+            </div>
+
+            <div class="form__actions">
+              <button class="bg-light-navy" mat-button>
+                Login
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
