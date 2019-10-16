@@ -23,6 +23,7 @@
     }
   }
   .header__inner {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -30,6 +31,7 @@
   }
   .burger-menu {
     & {
+      display: none;
       position: relative;
       z-index: 10;
       height: 28px;
@@ -94,6 +96,16 @@
   
 }
 
+
+@media(max-width: $tablet-portrait) {
+  .header {
+    .burger-menu {
+      display: inline-block;
+    }
+  }
+}
+
+
 /**************************************
   Nav
 ***************************************/
@@ -110,14 +122,14 @@
     margin: 0;
   }
   .active a { 
-    background-color: #ea723d;
+    background-color: $orange;
   }
   a {
     line-height: 2.4rem;
     padding: 1rem 1.7rem;
   }
   a:hover{
-    background-color: #ea723d;
+    background-color: $orange;
   }
 }
 
@@ -132,7 +144,38 @@
 @media(max-width: $tablet-portrait) {
   .nav {
     & { 
-      display: none;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: $white;
+      visibility: hidden;
+      opacity: 0;
+      width: 250px;
+      transform: translateY(0);
+      transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+      &.open {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(4.3rem);
+        transition-delay: 0s, 0s, 0.2s;
+      }
+      ul {
+        flex-direction: column;
+        
+        li {
+          width: 100%;
+        }
+        
+        .active a { 
+          background-color: $white;
+        }
+
+        a {
+          display: block;
+          padding: .8rem 2rem;
+          color: $medium-dark-grey;
+        }
+      }
     } 
   }
 }
@@ -217,7 +260,7 @@
       font-weight: 500;
     }
     &:hover {
-      color: #ea723d;
+      color: $orange;
     }
   }
 
