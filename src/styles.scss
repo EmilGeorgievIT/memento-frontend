@@ -2,6 +2,9 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
+@import '_variables';
+@import '_base';
+
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -29,25 +32,7 @@ $memento-theme: mat-light-theme($memento-primary, $memento-accent, $memento-warn
 /* You can add global styles to this file, and also import other style files */
 
 
-/********************************
-        Default colors
-*********************************/
 
-$black: #000;
-$white: #fff;
-$dark-navy: #2a3a4a;
-$light-navy: #1ea69a;
-$blue: #3dbbf3;
-$dark-blue: #2a3a4a;
-$dark-grey: #1a1a1a;
-$grey: #808080;
-$light-grey: #1c9d92;
-$warning: #d50000;
-$orange: #ea723d;
-$lime-green: #39FF14;
-$green: #228B22;
-$purple: #8A2BE2;
-$transparent: transparentize($dark-navy, 0.1);
 
 /********************************
         Default Text Colors
@@ -72,97 +57,6 @@ html, body { height: 100%; }
 body { margin: 0; font-family: 'Rubik', sans-serif; }
 
 
-/************************************
-    Basic Styling
-***********************************/
-
-body {
-    & {
-        min-width: 320px;
-        overflow: hidden;
-        background-color: $white;
-        color: $grey;
-        font-size: 14px;
-        // overflow: hidden;
-    }
-    .h1,
-    .h2,
-    .h3,
-    .h4,
-    .h5,
-    .h6,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        margin-top: 0;
-        margin-bottom: .5rem;
-        font-weight: 400;
-        line-height: 1.5;
-        color: inherit;
-    }
-    .h1,
-    h1 {
-        font-size: 2.5rem;
-        font-weight: 500;
-    }
-    .h2,
-    h2 {
-        font-size: 2rem;
-    }
-    .h3,
-    h3 {
-        font-size: 1.35rem;
-    }
-    .h4,
-    h4 {
-        font-size: 1.25rem;
-        font-weight: 500;
-    }
-    .h5,
-    h5 {
-        font-size: 1rem;
-    }
-    .h6,
-    h6 {
-        font-size: .875rem;
-    }
-    p {
-        opacity: 1 !important;
-    }
-    .container {
-        max-width: 1170px;
-        margin: 0 auto;
-        padding: 0 15px;
-    }
-
-    .container-extended {
-        max-width: 95%;
-        margin: 0 auto;
-        padding: 0 15px;
-    }
-
-    .section-header h2 {
-        font-size: 32px;
-        font-weight: 700;
-        margin: 0 0 16px;
-    }
-    .mat-card {
-        .mat-divider {
-            position: relative;
-        }
-    }
-    a {
-        color: #fff;
-        text-decoration: none;
-        transition: .2s all linear;
-    }
-    a:focus {
-        color: initial;
-    }
-}
 
 /**************************************
         Default Background colors
@@ -226,16 +120,6 @@ body {
     border-radius: 0 !important;
 }
 
-/************************************
-         Media Queries
-***********************************/
-
-$mobile-xs: '390px';
-$mobile: '599px'; 
-$tablet: '959px';
-$tablet-portrait: '1024px';
-$smallDesktop: '1279px';
-
 
 
 /************************************
@@ -254,9 +138,13 @@ $smallDesktop: '1279px';
 .dropdown { 
     & {
         position: absolute;
-        top: 100%;
+        top: calc(100% + 30px);
+        opacity: 0;
+        visibility: hidden;
         right: calc(100% - 31px);
+        transition: all .3s ease-in-out;
     }
+   
     .dropdown__login {
         h4 {
             margin-bottom: 1rem;
@@ -291,6 +179,13 @@ $smallDesktop: '1279px';
         font-size: 12px !important;
         color: $white !important;
     }
+}
+
+/**************************************
+    Main
+***************************************/
+.main--margin-top {
+    margin-top: 130px;
 }
 
 /**************************************

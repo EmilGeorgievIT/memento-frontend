@@ -11,6 +11,8 @@ import { RouterModule } from '@angular/router';
 import { rootRouterConfig } from './app.routes';
 import { MaterialModule } from './shared/modules/material.module';
 import { RecaptchaModule, RecaptchaFormsModule, RECAPTCHA_SETTINGS } from 'ng-recaptcha';
+import { RegisterComponent } from './auth/components/register/register.component';
+import { AuthModule } from './auth/modules/auth.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { RecaptchaModule, RecaptchaFormsModule, RECAPTCHA_SETTINGS } from 'ng-re
     AppRoutingModule,
     ReactiveFormsModule,
     RecaptchaModule,
+    AuthModule,
     RecaptchaFormsModule,
     HttpClientModule,
     FormsModule,

@@ -1,3 +1,5 @@
+@import '_variables';
+@import '_animations';
 
 /**************************************
   Header
@@ -14,15 +16,111 @@
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(192, 192, 192, 0) 100%);
     color: #fff;
   }
+  .header__aside {
+    & {
+      display: flex;
+      align-items: center;
+    }
+  }
   .header__inner {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     
   }
+  .burger-menu {
+    & {
+      display: none;
+      position: relative;
+      z-index: 10;
+      height: 28px;
+      width: 36px;
+      margin-left: 15px;
+      cursor: pointer;
+    }
+    
+    .line-top,
+    .line-middle,
+    .line-bottom {
+      position: absolute;
+      display: block;
+      height: 3px;
+      width: 36px;
+      border-radius: 2px;
+      background: #fff;
+    }
+    .line-top {
+      top: 0;
+      transform-origin: 34px 2px;
+    }
+    
+    .line-middle {
+      top: 12px;
+      transition: opacity 200ms linear;
+    }
+    
+    .line-bottom {
+      bottom: 0;
+      transform-origin: 34px 2px;
+    }
+    
+    &.is-open {
+      .line-top {
+        animation: line-top-out 600ms linear normal;
+        animation-fill-mode: forwards;
+      }
+      .line-middle {
+        opacity: 0;
+      }
+      .line-bottom {
+        animation: line-bot-out 600ms linear normal;
+        animation-fill-mode: forwards;
+      }
+    }
+    
+    &.is-closed {
+      .line-top {
+        animation: line-top-in 600ms linear normal;
+        animation-fill-mode: forwards;
+      }
+      .line-middle {
+        transition-delay: 200ms;
+      }
+      .line-bottom {
+        animation: line-bot-in 600ms linear normal;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+  
 }
 
 
+@media(max-width: $tablet-portrait) {
+  .header {
+    .burger-menu {
+      display: inline-block;
+    }
+  }
+}
+
+@media(max-width: $mobile) {
+  .header {
+    .header__inner {
+      flex-direction: column;
+    }
+  }
+}
+
+@media(max-width: $mobile) {
+  .header {
+    .header__aside {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+}
 
 /**************************************
   Nav
@@ -40,17 +138,78 @@
     margin: 0;
   }
   .active a { 
-    background-color: #ea723d;
+    background-color: $orange;
   }
   a {
     line-height: 2.4rem;
     padding: 1rem 1.7rem;
   }
   a:hover{
-    background-color: #ea723d;
+    background-color: $orange;
   }
 }
 
+@media(max-width: $smallDesktop) {
+  .nav {
+    a {
+      padding: 1rem;
+    } 
+  }
+}
+
+@media(max-width: $tablet-portrait) {
+  .nav {
+    & { 
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: $white;
+      visibility: hidden;
+      opacity: 0;
+      width: 250px;
+      transform: translateY(0);
+      transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+      &.open {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(4.3rem);
+        transition-delay: 0s, 0s, 0.2s;
+      }
+      ul {
+        flex-direction: column;
+        
+        li {
+          width: 100%;
+        }
+        
+        .active a { 
+          background-color: $light-navy;
+          color: $white;
+        }
+        a:hover{
+          background-color: $light-navy;
+          color: $white;
+        }
+        a {
+          display: block;
+          padding: .8rem 2rem;
+          color: $medium-dark-grey;
+        }
+      }
+    } 
+  }
+}
+
+@media(max-width: $mobile) {
+  .nav {
+    & {
+      width: 100%;
+    }
+    &.open {
+      transform: translateY(7.3rem);
+    }
+  }
+}
 
 /**************************************
   Nav Utils
@@ -75,6 +234,11 @@
     > .material-icons {
       font-size: 31px;
     }
+    &:hover .dropdown{
+      top: 100%;
+      visibility: visible;
+      opacity: 1;
+    }
   }
   ul{
     display: flex;
@@ -92,6 +256,15 @@
   }
 }
 
+@media(max-width: $mobile-xs) {
+  .nav-utils {
+    li:first-child {
+      display: none;
+    }
+  }
+}
+
+
 /**************************************
   Logo
 ***************************************/
@@ -106,9 +279,7 @@
 ***************************************/
 
 .form-login{ 
-  .form__actions{ 
-    margin-top: 1rem;
-    
+  .form__actions{     
     .btn {
       display: block;
       width: 100%;
@@ -128,7 +299,7 @@
       font-weight: 500;
     }
     &:hover {
-      color: #ea723d;
+      color: $orange;
     }
   }
 

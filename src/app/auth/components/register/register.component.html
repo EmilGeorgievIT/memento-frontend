@@ -1,0 +1,91 @@
+<app-header></app-header>
+
+<main class="main main--margin-top">
+  <section class="section-register">
+    <div class="container">
+      <div class="section__head">
+        <h4 class="section__title">
+          Register 
+        </h4>
+      </div>
+      
+      <div class="section__body">
+        <form class="form-register" [formGroup]='registerForm' (ngSubmit)='onSubmit()'>
+          <div class="form__body">
+            <mat-form-field appearance='outline' class="form__control">
+              <input matInput formControlName='username' placeholder="Username">
+              
+              <mat-icon matSuffix>face</mat-icon>
+              
+              <mat-error>This field is required</mat-error>
+            </mat-form-field>
+  
+            <mat-form-field appearance='outline' class="form__control">
+              <input matInput name="email" formControlName='email' placeholder="E-mail">
+              
+              <mat-icon matSuffix>email</mat-icon>
+              
+              <mat-error *ngIf="registerForm.get('email').hasError('email')">
+                Invalid email address
+              </mat-error>
+  
+              <mat-error *ngIf="registerForm.get('email').hasError('required')">
+                This field is required !
+              </mat-error>
+            </mat-form-field>
+            
+            <mat-form-field appearance='outline' class="form__control">
+              <input matInput formControlName='password' [type]="hide ? 'password' : 'text'" placeholder="Password">
+              
+              <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}
+              </mat-icon>
+  
+              <mat-error *ngIf="registerForm.get('password').hasError('required')">
+                This field is required !
+              </mat-error>
+  
+              <mat-error *ngIf="registerForm.get('password').hasError('minlength')">
+                Password must be at least 8 characters !
+              </mat-error>
+            </mat-form-field>
+  
+            <mat-form-field appearance='outline' class="form__control">
+              <input matInput formControlName='confirmPassword' [type]="hide2 ? 'password' : 'text'" placeholder="Repeat Password" [errorStateMatcher]="matcher">
+              
+              <mat-icon matSuffix (click)="hide2 = !hide2">{{hide2 ? 'visibility_off' : 'visibility'}}
+              </mat-icon>
+  
+              <mat-error *ngIf="registerForm.get('confirmPassword').hasError('required')">
+                This field is required !
+              </mat-error>
+  
+              <mat-error *ngIf="registerForm.get('confirmPassword').hasError('minlength')">
+                Password must be at least 8 characters !
+              </mat-error>
+
+              <mat-error *ngIf="registerForm.get('confirmPassword').touched && registerForm.get('password').touched && checkPasswords">
+                Passwords do not match
+              </mat-error>
+            </mat-form-field>
+  
+            <mat-select class="form__control form__select" [(value)]="selectedValue">
+              <mat-option *ngFor="let item of listRoles" [value]="item">
+                {{item}}
+              </mat-option>
+            </mat-select>
+            
+            <div style="max-width: 300px; margin: 2rem auto 0;">
+                <re-captcha class="form__recaptcha" formControlName="recaptchaReactive"></re-captcha>
+            </div>
+
+            <div class="form__actions">
+              <button class="bg-light-navy" mat-button>
+                Register
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
