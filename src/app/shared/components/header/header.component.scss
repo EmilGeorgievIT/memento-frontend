@@ -105,6 +105,22 @@
   }
 }
 
+@media(max-width: $mobile) {
+  .header {
+    .header__inner {
+      flex-direction: column;
+    }
+  }
+}
+
+@media(max-width: $mobile) {
+  .header {
+    .header__aside {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+}
 
 /**************************************
   Nav
@@ -167,9 +183,13 @@
         }
         
         .active a { 
-          background-color: $white;
+          background-color: $light-navy;
+          color: $white;
         }
-
+        a:hover{
+          background-color: $light-navy;
+          color: $white;
+        }
         a {
           display: block;
           padding: .8rem 2rem;
@@ -180,6 +200,16 @@
   }
 }
 
+@media(max-width: $mobile) {
+  .nav {
+    & {
+      width: 100%;
+    }
+    &.open {
+      transform: translateY(7.3rem);
+    }
+  }
+}
 
 /**************************************
   Nav Utils
@@ -225,6 +255,15 @@
     align-items: center;
   }
 }
+
+@media(max-width: $mobile-xs) {
+  .nav-utils {
+    li:first-child {
+      display: none;
+    }
+  }
+}
+
 
 /**************************************
   Logo
