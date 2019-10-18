@@ -7,17 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
   slides = [
-    { 
+    {
       img: "assets/images/slide-one.jpg",
       link: 'estate/1'
     },
-    { 
+    {
       img: "assets/images/slide-two.jpg",
-      link: 'estate/2' 
+      link: 'estate/2'
     },
-    { 
+    {
       img: "assets/images/slide-three.jpg",
-      link: 'estate/2' 
+      link: 'estate/2'
     }
   ];
 
@@ -28,10 +28,10 @@ export class MainComponent implements OnInit {
     "arrows": false,
     "fade": true,
     "cssEase": 'linear',
-    "dots": true
+    "dots": false
   };
 
-  constructor() { 
+  constructor() {
   }
 
   ngOnInit() {

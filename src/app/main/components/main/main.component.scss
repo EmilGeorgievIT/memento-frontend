@@ -1,0 +1,22 @@
+@import '_variables';
+
+/**************************************
+  Slick Carousel
+***************************************/
+
+.carousel {
+  .slick-slide {
+    min-height: 100vh;
+  }
+ .slick-link {
+   display: block;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center center;
+   position: absolute;
+   left: 0;
+   top: 0;
+   bottom: 0;
+   right: 0;   
+ } 
+}

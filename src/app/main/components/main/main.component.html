@@ -3,12 +3,12 @@
 <ngx-slick-carousel class="carousel" 
                         #slickModal="slick-carousel" 
                         [config]="slideConfig" 
-                        (breakpoint)="breakpoint($event)"
-                        >
+                        (breakpoint)="breakpoint($event)">
 
     <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-          <a [routerLink]='slide.link'>
-            <img src="{{ slide.img }}" alt="" width="100%">
+          <a class="slick-link" [ngStyle]="{'backgroundImage': 'url(' + slide.img + ')'}" [routerLink]='slide.link'>
+            <!-- <img src="{{ slide.img }}" alt="" width="100%"> -->
           </a>
     </div>
 </ngx-slick-carousel>
+
