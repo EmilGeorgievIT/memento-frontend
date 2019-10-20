@@ -13,15 +13,15 @@
         <form class="form-login" [formGroup]='loginForm' (ngSubmit)='onSubmit()'>
           <div class="form__body">
             <mat-form-field appearance='outline' class="form__control">
-              <input matInput name="email" formControlName='email' placeholder="E-mail">
+              <input matInput name="username" formControlName='username' placeholder="Username">
               
               <mat-icon matSuffix>email</mat-icon>
-              
-              <mat-error *ngIf="loginForm.get('email').hasError('email')">
+<!--               
+              <mat-error *ngIf="loginForm.get('usename').hasError('email')">
                 Invalid email address
-              </mat-error>
+              </mat-error> -->
   
-              <mat-error *ngIf="loginForm.get('email').hasError('required')">
+              <mat-error *ngIf="loginForm.get('username').hasError('required')">
                 This field is required !
               </mat-error>
             </mat-form-field>

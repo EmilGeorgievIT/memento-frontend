@@ -22,6 +22,6 @@ export class RegisterService {
     createUser(user) {
 
         const body = user;
-        return this.http.post('/registration/api/user/register', body, this.httpOptions);
+        return this.http.post('/api/api/user/register', body, this.httpOptions);
     }
 }
