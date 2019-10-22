@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 
@@ -10,18 +10,23 @@ import {map, startWith} from 'rxjs/operators';
 })
 export class SearchComponent implements OnInit {
   searchForm: FormGroup;
+  propertyLocation = new FormControl();
+  propertyStatus = new FormControl();
+  propertyType = new FormControl();
+
   locations: string[] = ['Champs-Élysées', 'Lombard Street', 'Abbey Road', 'Fifth Avenue'];
 
-  filteredStreets: Observable<string[]>;
+  filteredLocation: Observable<string[]>;
 
   constructor(
     private fb: FormBuilder
   ) {
     this.searchForm = this.fb.group({
-      location: ''
+      propertyLocation: '',
+      propertyStatus: ''
     });
 
-    this.filteredStreets = this.searchForm.get('location').valueChanges.pipe(
+    this.filteredLocation = this.propertyLocation.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value))
     );

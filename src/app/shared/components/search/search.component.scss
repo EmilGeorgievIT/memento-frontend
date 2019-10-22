@@ -1,11 +1,26 @@
 @import '_variables';
 
 /**************************************
-  Search Location
+  Search Property
 ***************************************/
-.search-location {
+
+.search-property {
   position: absolute;
   top: calc(100% - 20px);
   left: 0;
   width: 100%;
+}
+
+/**************************************
+  Form Search
+***************************************/
+
+.form-search {
+  .form__inner {
+    display: flex;
+    align-items: center;
+  }
+  .form__label { 
+    display: block;
+  }
 }

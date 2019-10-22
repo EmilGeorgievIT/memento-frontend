@@ -1,14 +1,65 @@
-<div class="search-location">
+<div class="search-property">
   <div class="search__inner">
-    <form [formGroup]='searchForm' (ngSubmit)='submitSearch()' class="search-main">
-      <div class="form__control">
-          <input type="text" placeholder="Main Location" [formControl]="location" [matAutocomplete]="auto">
-          
+    <form [formGroup]='searchForm' (ngSubmit)='submitSearch()' class="form-search">
+      <div class="form__inner">
+        <div class="form__control">
+          <label class="form__label" for="location">
+              Main Location
+          </label>
+
+          <input type="text" name="location" placeholder="Main Location" [formControl]="propertyLocation" [matAutocomplete]="auto">
+
           <mat-autocomplete #auto="matAutocomplete">
-            <mat-option *ngFor="let location of filteredStreets | async" [value]="location">
+            <mat-option *ngFor="let location of filteredLocation | async" [value]="location">
               {{location}}
             </mat-option>
           </mat-autocomplete>
+        </div>
+        
+        <div class="form__control">
+          <label class="form__label" for="location">
+              Property Status
+          </label>
+
+          <input type="text" name="status" placeholder="Property Status" [formControl]="propertyStatus" [matAutocomplete]="autoStatus">
+
+          <mat-autocomplete #autoStatus="matAutocomplete">
+            <mat-option>
+              Any
+            </mat-option>
+
+            <mat-option>
+                For Rent
+            </mat-option>
+
+            <mat-option>
+                For Sale
+            </mat-option>
+          </mat-autocomplete>
+        </div>
+
+        <div class="form__control">
+            <label class="form__label" for="location">
+                Property Type
+            </label>
+  
+            <input type="text" name="type" placeholder="Property Type" [formControl]="propertyType" [matAutocomplete]="auto">
+  
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let location of filteredLocation | async" [value]="location">
+                {{location}}
+              </mat-option>
+            </mat-autocomplete>
+          </div>
+        <button mat-button class="bg-light-navy">
+          <span>
+            Search
+          </span>
+
+          <i class="material-icons">
+            search
+          </i>
+        </button>
       </div>
     </form>
   </div>
