@@ -6,12 +6,14 @@ import { NotFoundComponent } from '../components/not-found/not-found.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RecaptchaFormsModule, RecaptchaModule } from 'ng-recaptcha';
+import { SearchComponent } from '../components/search/search.component';
 
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
+    SearchComponent,
     NotFoundComponent
   ],
   imports: [
@@ -25,6 +27,7 @@ import { RecaptchaFormsModule, RecaptchaModule } from 'ng-recaptcha';
   ],
   exports: [
     HeaderComponent,
+    SearchComponent,
     NotFoundComponent
   ]
 })

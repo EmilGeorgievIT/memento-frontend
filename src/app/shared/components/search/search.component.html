@@ -1,0 +1,15 @@
+<div class="search-location">
+  <div class="search__inner">
+    <form [formGroup]='searchForm' (ngSubmit)='submitSearch()' class="search-main">
+      <div class="form__control">
+          <input type="text" placeholder="Main Location" [formControl]="location" [matAutocomplete]="auto">
+          
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let location of filteredStreets | async" [value]="location">
+              {{location}}
+            </mat-option>
+          </mat-autocomplete>
+      </div>
+    </form>
+  </div>
+</div>

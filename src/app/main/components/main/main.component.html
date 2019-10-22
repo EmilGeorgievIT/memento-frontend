@@ -1,14 +1,18 @@
 <app-header></app-header>
-
-<ngx-slick-carousel class="carousel" 
-                        #slickModal="slick-carousel" 
-                        [config]="slideConfig" 
-                        (breakpoint)="breakpoint($event)">
-
-    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-          <a class="slick-link" [ngStyle]="{'backgroundImage': 'url(' + slide.img + ')'}" [routerLink]='slide.link'>
-            <!-- <img src="{{ slide.img }}" alt="" width="100%"> -->
-          </a>
-    </div>
-</ngx-slick-carousel>
+<main class="main"> 
+      <div class="main__wrapper">
+            <ngx-slick-carousel class="carousel" 
+                                    #slickModal="slick-carousel" 
+                                    [config]="slideConfig" 
+                                    (breakpoint)="breakpoint($event)">
+            
+                <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                      <a class="slick-link" [ngStyle]="{'backgroundImage': 'url(' + slide.img + ')'}" [routerLink]='slide.link'>
+                      </a>
+                </div>
+            </ngx-slick-carousel>
+            
+            <app-search></app-search>
+      </div>
+</main>      
 
