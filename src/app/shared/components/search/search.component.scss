@@ -6,9 +6,9 @@
 
 .search-property {
   position: absolute;
-  top: calc(100% - 20px);
-  left: 0;
-  width: 100%;
+  top: calc(100% - 40px);
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /**************************************
@@ -20,7 +20,61 @@
     display: flex;
     align-items: center;
   }
+  .form__control {
+    padding: 1.5rem 1.2rem;
+    min-width: 300px;
+    background-color: $white;
+  }
+  .form__control ~ .form__control {
+    border-left: 1px solid rgba(128, 128, 128, 0.2);
+  }
+  .form__input {
+    position: relative;
+    input {
+      border: 0;
+      appearance: none;
+      padding: 0 .5rem 0 0;     
+    }
+    input:focus {
+      outline: 0;
+    }
+    input::placeholder {
+      opacity: 1;
+      color: $medium-dark-grey;
+
+    }
+    .mat-icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+    }
+  }
   .form__label { 
     display: block;
+    color: $medium-dark-grey;
+    font-weight: 500;
+    margin-bottom: .5rem;
   }
+  .btn-advance {
+    background: #18998e;
+    padding: 0 1.5rem;
+    font-size: 15px;
+    line-height: 90px; 
+  }
+  .btn-submit {
+    display: block;
+    font-size: 15px;
+    padding: 0 2rem;
+    line-height: 88px;
+    margin-left: -1px;
+  }
+}
+
+@media(max-width: $smallDesktop){
+  .form-search {
+    .form__control {
+      min-width: auto;
+    }   
+  } 
 }

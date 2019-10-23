@@ -6,8 +6,12 @@
           <label class="form__label" for="location">
               Main Location
           </label>
-
-          <input type="text" name="location" placeholder="Main Location" [formControl]="propertyLocation" [matAutocomplete]="auto">
+          
+          <div class="form__input">
+            <input type="text" name="location" placeholder="Main Location" [formControl]="propertyLocation" [matAutocomplete]="auto">
+            
+            <mat-icon matSuffix>arrow_drop_down</mat-icon>
+          </div>
 
           <mat-autocomplete #auto="matAutocomplete">
             <mat-option *ngFor="let location of filteredLocation | async" [value]="location">
@@ -21,7 +25,11 @@
               Property Status
           </label>
 
-          <input type="text" name="status" placeholder="Property Status" [formControl]="propertyStatus" [matAutocomplete]="autoStatus">
+          <div class="form__input">
+            <input type="text" name="status" placeholder="Property Status" [formControl]="propertyStatus" [matAutocomplete]="autoStatus">
+            
+            <mat-icon matSuffix>arrow_drop_down</mat-icon>
+          </div>
 
           <mat-autocomplete #autoStatus="matAutocomplete">
             <mat-option>
@@ -39,26 +47,37 @@
         </div>
 
         <div class="form__control">
-            <label class="form__label" for="location">
-                Property Type
-            </label>
-  
+          <label class="form__label" for="location">
+              Property Type
+          </label>
+          
+          <div class="form__input">
             <input type="text" name="type" placeholder="Property Type" [formControl]="propertyType" [matAutocomplete]="auto">
-  
-            <mat-autocomplete #auto="matAutocomplete">
-              <mat-option *ngFor="let location of filteredLocation | async" [value]="location">
-                {{location}}
-              </mat-option>
-            </mat-autocomplete>
-          </div>
-        <button mat-button class="bg-light-navy">
-          <span>
-            Search
-          </span>
+            
+            <mat-icon matSuffix>arrow_drop_down</mat-icon>
+          </div>            
 
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let location of filteredLocation | async" [value]="location">
+              {{location}}
+            </mat-option>
+          </mat-autocomplete>
+        </div>
+        
+        <button mat-button class="bg-light-navy btn-advance">
+          <i class="material-icons">
+            zoom_in
+          </i>
+        </button>
+
+        <button mat-button class="bg-light-navy btn-submit">
           <i class="material-icons">
             search
           </i>
+
+          <span>
+            Search
+          </span>
         </button>
       </div>
     </form>
