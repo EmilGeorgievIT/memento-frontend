@@ -4,6 +4,7 @@
 @import '~@angular/material/theming';
 @import '_variables';
 @import '_base';
+@import '_material';
 
 // Plus imports for other components in your app.
 
@@ -30,8 +31,6 @@ $memento-theme: mat-light-theme($memento-primary, $memento-accent, $memento-warn
 @include angular-material-theme($memento-theme);
 
 /* You can add global styles to this file, and also import other style files */
-
-
 
 
 /********************************
@@ -186,24 +185,4 @@ body { margin: 0; font-family: 'Rubik', sans-serif; }
 ***************************************/
 .main--margin-top {
     margin-top: 130px;
-}
-
-/**************************************
-    Material Styling
-***************************************/
-
-.mat-button.mat-primary[disabled],
-.mat-button.mat-accent[disabled],
-.mat-button.mat-warn[disabled],
-.mat-button[disabled][disabled],
-.mat-icon-button.mat-primary[disabled],
-.mat-icon-button.mat-accent[disabled],
-.mat-icon-button.mat-warn[disabled],
-.mat-icon-button[disabled][disabled],
-.mat-stroked-button.mat-primary[disabled],
-.mat-stroked-button.mat-accent[disabled],
-.mat-stroked-button.mat-warn[disabled],
-.mat-stroked-button[disabled][disabled] {
-    color: $white !important;
-    opacity: .7;
 }
