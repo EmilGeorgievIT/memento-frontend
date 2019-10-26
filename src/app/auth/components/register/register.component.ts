@@ -15,10 +15,11 @@ export class RegisterComponent implements OnInit {
 
   hide = true;
   hide2 = true;
-  selectedValue = 'Agent';
+  isSubmitted = false;
+  selectedValue = 'Admin';
 
   listRoles = [
-    "Agent",
+    "Admin",
     "Agency",
     "Buyer"
   ];
@@ -29,9 +30,8 @@ export class RegisterComponent implements OnInit {
     private registerService: RegisterService
   ) {
     this.registerForm = this.fb.group({
-      username: ['', Validators.compose([
-        Validators.required
-      ])],
+      firstName: ['', Validators.required],
+      lastName: ['',  Validators.required],
       email: ['', Validators.compose([
         Validators.email,
         Validators.required
@@ -40,6 +40,7 @@ export class RegisterComponent implements OnInit {
         Validators.minLength(8),
         Validators.required
       ])],
+      roleName: ['ADMIN',  Validators.required],
       confirmPassword: ['', Validators.compose([
         Validators.minLength(8),
         Validators.required
@@ -57,8 +58,13 @@ export class RegisterComponent implements OnInit {
     if(this.registerForm.invalid) {
       return;
     } else {
+      
       this.registerService.createUser(this.registerForm.value).subscribe(data => {
-        this.router.navigateByUrl('/home');
+        this.isSubmitted = true;
+
+        setTimeout(() => {
+          this.router.navigateByUrl('/home');
+        }, 5000);
       }, error => {
         console.log(error);
       })
