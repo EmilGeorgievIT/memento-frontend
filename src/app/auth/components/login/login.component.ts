@@ -29,11 +29,8 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) {
     this.loginForm = this.fb.group({
-      // email: ['', Validators.compose([
-      //   Validators.email,
-      //   Validators.required
-      // ])],
-      username: ['', Validators.compose([
+      email: ['', Validators.compose([
+        Validators.email,
         Validators.required
       ])],
       password: ['', Validators.compose([
@@ -45,12 +42,12 @@ export class LoginComponent implements OnInit {
   } 
 
   onSubmit() {
-    const { username, password } = this.loginForm.value;
+    const { email, password } = this.loginForm.value;
 
     if(this.loginForm.invalid) {
       return;
     } else {
-       this.loginService.login(username, password).subscribe(data => {
+       this.loginService.login(email, password).subscribe(data => {
          this.router.navigateByUrl('/home');
        }, error => {
          console.log(error);
