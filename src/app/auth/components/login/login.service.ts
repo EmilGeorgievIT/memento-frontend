@@ -17,7 +17,7 @@ export class LoginService {
     })
   };
 
-  login(username, password) {
-      return this.http.post('/api/api/user/login?username=' + username + '&password=' + password, this.httpOptions);
+  login(email, password) {
+      return this.http.post('/api/api/user/login?email=' + email + '&password=' + password, this.httpOptions);
   }
 }
